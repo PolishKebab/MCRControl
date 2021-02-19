@@ -16,6 +16,7 @@ Start:
 3. Change RCONport to the port you set in server.properties
 4. Change token to your bot token
 5. Change serverIp to your server ip [also supports numberic ip]
+6. Change serverPort to your server port [if not default is 25565]
 6. [Optional] Change Seed to your world seed
 =================================================================================
 
