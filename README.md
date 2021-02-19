@@ -22,7 +22,16 @@ Start:
 
 Bot is setup to allow @everyone to only use !serwer, if you want to make people be able to use more commands change dev:true to false in command file
 also, if you want only few people to use a command just add their user id into devs.json
-Translation to english soon.
 Feel free to edit the code, edited code isnt supported by me thought.
 In case of bugs ect. open an issue or contact me on discord.
 Bot made by: 𝓟𝓸𝓵𝓲𝓼𝓱𝓚𝓮𝓫𝓪𝓫| a.k.a Kebab#9611 | Helper: Demon.#5441
+
+=========================
+
+Planed updates:
+
+1. Translate to english
+2. Add Plugins
+3. Role permissions to commands
+
+==========================
