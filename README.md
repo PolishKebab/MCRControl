@@ -18,6 +18,7 @@ Start:
 5. Change serverIp to your server ip [also supports numberic ip]
 6. [Optional] Change Seed to your world seed
 =================================================================================
+
 Bot is setup to allow @everyone to only use !serwer, if you want to make people be able to use more commands change dev:true to false in command file
 also, if you want only few people to use a command just add their user id into devs.json
 Translation to english soon.
