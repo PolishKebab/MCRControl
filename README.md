@@ -32,6 +32,6 @@ Planed updates:
 
 1. Translate to english
 2. Add Plugins
-3. Role permissions to commands
+3. Role dependent permissions to commands
 
 ==========================
