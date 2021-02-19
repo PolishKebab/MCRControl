@@ -1,0 +1,11 @@
+{
+    "serverIp":"<Server ip>",
+    "RCONpassword":"<RCON password>",
+    "RCONport":"<RCON port>",
+    "prefix":"!",
+    "token":"<Bot token>", 
+    "color":"#FFFF00",
+    "status":"",
+    "worldSeed":"<World seed>"
+}
+
