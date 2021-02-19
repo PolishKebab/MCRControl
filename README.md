@@ -1,7 +1,8 @@
 "# MCRControl" 
 Minecraft Remote Control [MCRControl] is a bot schematic for remote acces to console of your minecraft server.
-Setup:
-++++++++Start++++++++
+
+Start:
+
 =======================================================================
 1. cd into your discord bot folder and type "npm i discord.js"
 2. type "npm i minecraft-server-util"
