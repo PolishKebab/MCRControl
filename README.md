@@ -24,6 +24,7 @@ Bot is setup to allow @everyone to only use !serwer, if you want to make people 
 also, if you want only few people to use a command just add their user id into devs.json
 Feel free to edit the code, edited code isnt supported by me thought.
 In case of bugs ect. open an issue or contact me on discord or Demon. He knows more about code than me.
+
 Bot made by: 𝓟𝓸𝓵𝓲𝓼𝓱𝓚𝓮𝓫𝓪𝓫| a.k.a Kebab#9611 | Helper: Demon.#5441
 
 =========================
