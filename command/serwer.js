@@ -10,8 +10,8 @@ module.exports = {
 	category:'basic',
     execute(message, args) {
         const util = require('minecraft-server-util');
-    if(!args[1]) {
-        util.status('medievalcraft.gq', { port: 25723, enableSRV: true, timeout: 5000, protocolVersion: 47 })
+    if(serverPort == '') serverPort = 25565;
+        util.status(serverIp, { port: Number(serverPort), enableSRV: true, timeout: 5000, protocolVersion: 47 })
             .then((response) => {
                 const embed = new discord.MessageEmbed()
                 .setColor(color)
