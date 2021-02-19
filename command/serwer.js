@@ -1,11 +1,11 @@
 const discord = require('discord.js')
-const {color} = require('../config.json')
+const {color,serverIp,serverPort,} = require('../config.json')
 module.exports = {
-	name: 'serwer',
-	description: 'Informacje o serwerze',
+	name: 'server',
+	description: 'Server Information',
 	guildOnly: true,
 	dev:false,
-	aliases: ['server','status'],
+	aliases: ['serwer','status'],
 	cooldown:5,
 	category:'basic',
     execute(message, args) {
@@ -15,11 +15,11 @@ module.exports = {
             .then((response) => {
                 const embed = new discord.MessageEmbed()
                 .setColor(color)
-                .setTitle('Status Serwera')
+                .setTitle('Server Status')
                 .addFields(
-                    { name: 'Adres Serwera', value:`\`${response.host}\``},
-                    { name: 'Wersja', value: `\`${response.version}\``, inline: false },
-                    { name: 'Gracze', value: `\`${response.onlinePlayers}/${response.maxPlayers}\``, inline: false },
+                    { name: 'Ip Adres', value:`\`${response.host}\``},
+                    { name: 'Version', value: `\`${response.version}\``, inline: false },
+                    { name: 'Players', value: `\`${response.onlinePlayers}/${response.maxPlayers}\``, inline: false },
                 )
                 message.channel.send(embed)
             })
