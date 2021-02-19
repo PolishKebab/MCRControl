@@ -1,6 +1,6 @@
 {
     "serverIp":"<Server ip>",
-    "serverPort:"<Server port>",
+    "serverPort":"<Server port>",
     "RCONpassword":"<RCON password>",
     "RCONport":"<RCON port>",
     "prefix":"!",
