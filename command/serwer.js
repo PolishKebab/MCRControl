@@ -5,7 +5,7 @@ module.exports = {
 	description: 'Server information',
 	guildOnly: true,
 	dev:false,
-	aliases: ['serwer','status'],
+	aliases: ['serer','status'],
 	cooldown:5,
 	category:'basic',
     execute(message, args) {

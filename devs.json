@@ -1,3 +1,9 @@
 {
+<<<<<<< HEAD
     "devs":[""]
 }
+=======
+    "devs":["id here","id here"]
+}
+ //you can add more ids just do "id here" , "id here"
+>>>>>>> 4a69c83a4a8f0e8fb75047c42ae72ece08f12d94

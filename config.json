@@ -1,6 +1,10 @@
 {
     "serverIp":"<Server ip>",
+<<<<<<< HEAD
     "serverPort":"<Server port here [if not provided default is 25565]",
+=======
+    "serverPort":"<Server port>",
+>>>>>>> 4a69c83a4a8f0e8fb75047c42ae72ece08f12d94
     "RCONpassword":"<RCON password>",
     "RCONport":"<RCON port>",
     "prefix":"!",
