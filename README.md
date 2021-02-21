@@ -31,7 +31,7 @@ Bot made by: 𝓟𝓸𝓵𝓲𝓼𝓱𝓚𝓮𝓫𝓪𝓫| a.k.a Kebab#9611 | He
 
 Planned updates:
 
-1. Translate to english
+1. Translate to english [Done]
 2. Add Plugins
 3. Role dependent permissions to commands
 
