@@ -2,7 +2,7 @@ const {prefix,color,RCONport,RCONpassword,serverIp} = require('../config.json')
 const discord = require('discord.js')
 module.exports = {
 	name: 'team',
-	description: 'komenda /team',
+	description: '/team command',
 	guildOnly: true,
 	dev:true,
 	aliases: ['',''],
@@ -17,11 +17,10 @@ module.exports = {
             client.on('output', (msg) => {
                 const embed = new discord.MessageEmbed()
                 embed.setTitle('Team')
-                embed.setDescription(`Wykonano:\`${command}\``)
-                .setFooter('Ta wiadomość nie gwarantuje, że komenda zadziałała, jest ona wysyłana automatycznie')
+                .setDescription(`Executed: \`${command}\`\nOutput\`${msg}\``)
                 message.channel.send(embed)
             });
-            if(!args[0]) message.channel.send('Brak warunku!'); //wdym? why i need to change desc?
+            if(!args[0]) message.channel.send('No argument provided!');
             if(args[0] == 'add') {
             // Team add <teamName> [<displayName>] [] = optional
                 if(!args[1]) return message.channel.send(`\`Team add <teamName> [<displayName>]\``)

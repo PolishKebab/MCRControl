@@ -2,7 +2,7 @@ const{color,RCONport,RCONpassword,serverIp,prefix,worldSeed} = require('../confi
 const discord = require('discord.js')
 module.exports = {
 	name: 'seed',
-	description: 'pokazuje ziarno świata',
+	description: '/seed command',
 	guildOnly: true,
 	dev:true,
 	aliases: [],
@@ -14,12 +14,11 @@ module.exports = {
         const client = new util.RCON(serverIp, { port:Number(RCONport),password: RCONpassword });
         client.connect()
         .then(async () => {
-            client.on('output', (message) =>{
+            client.on('output', (msg) =>{
                 const embed = new discord.MessageEmbed()
                 .setTitle('Seed')
                 .setColor(color)
                 .setDescription(`Seed: \`${String(worldSeed)}\``)
-                .setFooter('Ta wiadomość nie gwarantuje, że komenda zadziałała, jest ona wysyłana automatycznie')
                 message.channel.send(embed);
             });
             

@@ -1,29 +1,28 @@
-const{color,RCONpassword,RCONport,serverIp} = require('../config.json')
+const{color,RCONpassword,RCONport,serverIp,prefix} = require('../config.json')
 const discord = require('discord.js')
 module.exports = {
 	name: 'say',
-	description: 'Pisanie na serwerze',
+	description: '/say command',
 	guildOnly: true,
 	dev:true,
-	aliases: ['broadcast','me'],
+	aliases: [],
 	cooldown:5,
 	category:'vanilla',
     execute(message, args) {
         if(!args[0]) return message.channel.send('Brak wiadomości!');
         const util = require('minecraft-server-util');
-        const client = new util.RCON(serverIp, { port:Number(RCONport),password:RCONpassword });
+        const client = new util.RCON(serverIp, {port:Number(RCONport),password:RCONpassword });
+        const command = message.content.replace(prefix, '')
         client.connect()
             .then(async () => {
-            const msg = args.join(' ')
-            client.on('output', (message) =>{
+            client.on('output', (msg) =>{
                 const embed = new discord.MessageEmbed()
                 .setTitle('Say')
                 .setColor(color)
-                .setDescription(`Wyjście: \`${msg}\` `)
-                .setFooter('Ta wiadomość nie gwarantuje, że komenda zadziałała, jest ona wysyłana automatycznie')
+                .setDescription(`Executed: \`${command}\`\nOutput\`${msg}\``)
                 message.channel.send(embed);
             });
-            await client.run(`say ${msg}`)
+            await client.run(command)
         })
     }
 

@@ -1,17 +1,17 @@
-const {color,RCONpassword,RCONport} = require('../config.json')
+const {color,RCONpassword,RCONport,serverIp} = require('../config.json')
 const discord = require('discord.js')
 module.exports = {
 	name: 'pardon',
-	description: 'Banuje',
+	description: '/pardon command',
 	guildOnly: true,
 	dev:true,
 	aliases: [],
 	cooldown:5,
 	category:'vanilla',
     execute(message, args) {
-        if(!args[0]) return message.channel.send('Brak nazwy użytkownika!');
+        if(!args[0]) return message.channel.send('No username provided!');
         const util = require('minecraft-server-util');
-        const client = new util.RCON('medievalcraft.gq', { port:Number(RCONport),password:RCONpassword});
+        const client = new util.RCON(serverIp, { port:Number(RCONport),password:RCONpassword});
             client.on('output', (message) => console.log(message));
             client.connect()
             .then(async () => {
@@ -20,8 +20,7 @@ module.exports = {
                     const embed = new discord.MessageEmbed()
                     .setTitle('Unban')
                     .setColor(color)
-                    .setDescription(`Wykonano: \`${command}\`\nWyjście:\`${msg}\``)
-                    .setFooter('Ta wiadomość nie gwarantuje, że komenda zadziałała, jest ona wysyłana automatycznie')
+                    .setDescription(`Executed: \`${command}\`\nOutput\`${msg}\``)
                     message.channel.send(embed);
                 })
                 await client.run(command)

@@ -1,28 +1,28 @@
-const{color} = require('../config.json')
+const{color,RCONpassword,RCONport,serverIp,prefix} = require('../config.json')
 const discord = require('discord.js')
 module.exports = {
 	name: 'list',
-	description: 'Wyświetla liste graczy',
+	description: '/list command',
 	guildOnly: true,
 	dev:true,
-	aliases: ['lista',''],
+	aliases: [],
 	cooldown:5,
 	category:'vanilla',
     execute(message, args) {
+        const command = message.content.replace(prefix, '')
         const util = require('minecraft-server-util');
-        const client = new util.RCON('medievalcraft.gq', { port:25689,password: 'Musztarda1' });
+        const client = new util.RCON(serverIp, { port:Number(RCONport),password:RCONpassword});
         client.on('output', (message) => console.log(message));
         client.connect()
         .then(async () => {
-            client.on('output', (message) => {
+            client.on('output', (msg) => {
                 const embed = new discord.MessageEmbed()
-                .setTitle('Lista')
+                .setTitle('List')
                 .setColor(color)
-                .setDescription(`Jeszcze nie działa, użyj \`!serwer\``)
-                .setFooter('Ta wiadomość nie gwarantuje, że komenda zadziałała, jest ona wysyłana automatycznie')
+                .setDescription(`Executed: \`${command}\`\nOutput\`${msg}\``)
                 message.channel.send(embed);
             });
-            await client.run(`list`)            
+            await client.run(command)            
         })
     }   
 }

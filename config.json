@@ -1,11 +1,12 @@
 {
     "serverIp":"<Server ip>",
+    "serverPort":"<Server port here [if not provided default is 25565]",
     "RCONpassword":"<RCON password>",
     "RCONport":"<RCON port>",
     "prefix":"!",
     "token":"<Bot token>", 
     "color":"#FFFF00",
-    "status":"",
+    "status":"<Bot status> [{prefix}help already provided]",
     "worldSeed":"<World seed>"
 }
 

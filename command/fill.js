@@ -2,7 +2,7 @@ const{color,RCONport,RCONpassword,serverIp,prefix} = require('../config.json')
 const discord = require('discord.js')
 module.exports = {
 	name: 'fill',
-	description: 'gorsze //set',
+	description: '/fill command',
 	guildOnly: true,
 	dev:true,
 	aliases: [],
@@ -15,12 +15,11 @@ module.exports = {
         client.connect()
         .then(async () => {
             if(!args[0]) return message.channel.send(`\`fill <x> <y> <z> <dx> <dy> <dz> <block Name>[destroy - hollow - keep - outline - replace <Block Name>]\``)
-            client.on('output', (message) =>{
+            client.on('output', (msg) =>{
                 const embed = new discord.MessageEmbed()
                 .setTitle('Fill')
                 .setColor(color)
-                .setDescription(`Wykonano: \`${command}\``)
-                .setFooter('Ta wiadomość nie gwarantuje, że komenda zadziałała, jest ona wysyłana automatycznie')
+                .setDescription(`Executed: \`${command}\`\nOutput\`${msg}\``)
                 message.channel.send(embed);
             });
             await client.run(command)

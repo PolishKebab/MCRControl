@@ -2,10 +2,10 @@ const{color,RCONport,RCONpassword,serverIp,prefix} = require('../config.json')
 const discord = require('discord.js')
 module.exports = {
 	name: 'whitelist',
-	description: 'lista filtrująca',
+	description: '/whitelist command',
 	guildOnly: true,
 	dev:true,
-	aliases: [''],
+	aliases: [],
 	cooldown:5,
 	category:'vanilla',
     execute(message, args) {
@@ -20,8 +20,7 @@ module.exports = {
                 const embed = new discord.MessageEmbed()
                 .setTitle('Whitelist')
                 .setColor(color)
-                .setDescription(`Wykonano: \`${command}\`\nWyjście:\`${msg}\``)
-                .setFooter('Ta wiadomość nie gwarantuje, że komenda zadziałała, jest ona wysyłana automatycznie')
+                .setDescription(`Executed: \`${command}\`\nOutput\`${msg}\``)
                 message.channel.send(embed);
             })
             await client.run(command)

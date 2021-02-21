@@ -2,7 +2,7 @@ const{color,RCONport,RCONpassword,serverIp,prefix} = require('../config.json')
 const discord = require('discord.js')
 module.exports = {
 	name: 'clear',
-	description: 'Czyści ekwipunek',
+	description: '/clear command',
 	guildOnly: true,
 	dev:true,
 	aliases: [],
@@ -15,12 +15,11 @@ module.exports = {
         client.connect()
         .then(async () => {
             if(!args[0]) return message.channel.send(`\`clear <player> [item ID] [DV] [maximum amount taken] [DataTag]\``)
-            client.on('output', (message) =>{
+            client.on('output', (msg) =>{
                 const embed = new discord.MessageEmbed()
                 .setTitle('Clear')
                 .setColor(color)
-                .setDescription(`Wykonano: \`${command}\``)
-                .setFooter('Ta wiadomość nie gwarantuje, że komenda zadziałała, jest ona wysyłana automatycznie')
+                .setDescription(`Executed: \`${command}\`\nOutput\`${msg}\``)
                 message.channel.send(embed);
             });
             await client.run(command)

@@ -2,7 +2,7 @@ const{color,RCONport,RCONpassword,serverIp,prefix} = require('../config.json')
 const discord = require('discord.js')
 module.exports = {
 	name: 'gamemode',
-	description: 'Zmienia tryb gry gracza',
+	description: '/gamemode command',
 	guildOnly: true,
 	dev:true,
 	aliases: [],
@@ -16,12 +16,11 @@ module.exports = {
         client.connect()
         .then(async () => {
             if(!args[0]) return message.channel.send(`\`gamemode <survival/spectator/adventure/creative>\``)
-            client.on('output', (message) =>{
+            client.on('output', (msg) =>{
                 const embed = new discord.MessageEmbed()
                 .setTitle('Gamemode')
                 .setColor(color)
-                .setDescription(`Wykonano: \`${command}\``)
-                .setFooter('Ta wiadomość nie gwarantuje, że komenda zadziałała, jest ona wysyłana automatycznie')
+                .setDescription(`Executed: \`${command}\`\nOutput\`${msg}\``)
                 message.channel.send(embed);
             });
             await client.run(command)
