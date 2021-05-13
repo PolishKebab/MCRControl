@@ -24,10 +24,12 @@ client.on('message', message => {
     const dev=JSON.parse(fs.readFileSync('./devs.json'))
     if (!message.content.startsWith(prefix) || message.author.bot) return;
     if(message.channel.type=='dm')return message.channel.send('DM commands are turned off.');
+// Code to turn off DM command, be aware that if you delete it, the bot may crash on some commands in DM's.
     const args = message.content.slice(prefix.length).trim().split(/ +/); 
     const commandName = args.shift().toLowerCase();
     var command = client.commands.get(commandName) || client.commands.find(cmd => cmd.aliases && cmd.aliases.includes(commandName));
     if(!command)return;
+//
     const d=new Date().toLocaleDateString().replace('/','@').replace('/','@');
     const time=new Date();
     var zero = "";
@@ -40,6 +42,7 @@ client.on('message', message => {
 	}else{ 
 		fs.writeFileSync(`./logs/${d}.txt`,'---logs---:\n'+msg);
 	}
+// Code to log commands used in a txt file every day
     if(command.dev){
         if(!dev.devs.includes(message.author.id))return;
     }
