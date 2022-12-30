@@ -1,4 +1,4 @@
-"# MCRControl" 
+# MCRControl 
 Minecraft Remote Control [MCRControl] is a bot schematic for remote access to console of your minecraft server.
 
 Start:
